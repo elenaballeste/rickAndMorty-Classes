@@ -1,0 +1,31 @@
+.NavItem {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.NavItem:first-of-type {
+    margin-right: 32px;
+}
+
+.NavItem a {
+    margin: 0;
+    text-decoration: none;
+    color: #000;
+}
+
+.NavItem a:hover,
+.NavItem a:active,
+.NavItem a.active {
+    color: #3a99ac;
+}
+.NavItem a.active::after {
+    position: absolute;
+    content: '';
+    background: #3a99ac;
+    display: block;
+    height: 2px;
+    margin-top: 15px;
+    width: 100%;
+}
