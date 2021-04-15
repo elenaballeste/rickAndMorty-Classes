@@ -24,6 +24,9 @@ class Characters extends Component {
             this.getCharacters(this.state.currentUrl)
         }
     }
+    componentWillUnmount () {
+        localStorage.setItem('page', this.state.currentPage)
+    }
 
     getCharacters = (url) => {
         this.setState({ loading: true })
@@ -36,7 +39,7 @@ class Characters extends Component {
                     currentPage: url.includes("page=") ? url.split("page=").pop() : '1',
                     totalPages: response.data.info.pages
                 })
-                localStorage.setItem('page', this.state.currentPage)
+                // localStorage.setItem('page', this.state.currentPage)
                 this.setState({ loading: false })
             })
             .catch(error => {
